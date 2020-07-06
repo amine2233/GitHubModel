@@ -1,0 +1,30 @@
+name: Swift
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:
+  build-macOS-latest:
+    name: Build on macOS latest
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Clean
+      run: swift package clean
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
+  build-ubuntu-swift-latest:
+    name: Build on ubuntu latest with swift latest
+    runs-on: ubuntu-latest
+    container: swift:latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Clean
+      run: swift package clean
+    - name: Build
+      run: swift build -v
+    - name: Run tests
+      run: swift test -v
