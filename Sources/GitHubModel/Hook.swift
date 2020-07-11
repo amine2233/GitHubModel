@@ -37,18 +37,6 @@ public struct Hook: Codable {
     }
 }
 
-public struct Config: Codable {
-    let contentType: String
-    let insecureSSL: Int
-    let url: URL
-
-    enum CodingKeys: String, CodingKey {
-        case contentType = "content_type"
-        case insecureSSL = "insecure_ssl"
-        case url
-    }
-}
-
 public struct LastResponse: Codable {
     let code: Int?
     let status: String?
