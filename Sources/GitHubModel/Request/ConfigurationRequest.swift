@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct ConfigurationRequest: Encodable {
+public struct ConfigurationRequest: Codable {
     /// Use web to create a webhook. Default: web. This parameter only accepts the value web.
     public let name: String
     /// Required. Key/value pairs to provide settings for this webhook.
