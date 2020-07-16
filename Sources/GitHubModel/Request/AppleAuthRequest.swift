@@ -18,4 +18,10 @@ public struct AppleAuthRequest: Decodable {
     public let user: CreateUserRequest
     public let state: String
     public let idToken: String
+
+    public init(user: CreateUserRequest, state: String, idToken: String) {
+        self.user = user
+        self.state = state
+        self.idToken = idToken
+    }
 }

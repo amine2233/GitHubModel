@@ -16,4 +16,10 @@ public struct CreateUserRequest: Codable {
 
     /// User's email address.
     public var email: String
+
+    public init(user: String, name: String, email: String) {
+        self.user = user
+        self.name = name
+        self.email = email
+    }
 }
