@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct AppleAuthRequest: Decodable {
+public struct AppleAuthRequest: Codable {
 
     public enum CodingKeys: String, CodingKey {
         case user
