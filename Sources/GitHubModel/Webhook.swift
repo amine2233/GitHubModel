@@ -1,6 +1,6 @@
 import Foundation
 
-public class Webhook: Codable {
+open class Webhook: Codable {
 
     public let action: String?
     public let sender: Sender
