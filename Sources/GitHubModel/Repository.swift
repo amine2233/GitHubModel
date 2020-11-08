@@ -10,6 +10,7 @@ import Foundation
 // MARK: model
 
 public struct Repository: Codable, Equatable {
+
     public let id: Int
     public let name: String
     public let fullName: String
@@ -33,9 +34,23 @@ public struct Repository: Codable, Equatable {
         case license
         case permissions
     }
+
+    public init(id: Int, name: String, fullName: String, private: Bool, fork: Bool, url: URL, owner: User, htmlUrl: URL, license: License?, permissions: Permission?) {
+        self.id = id
+        self.name = name
+        self.fullName = fullName
+        self.private = `private`
+        self.fork = fork
+        self.url = url
+        self.owner = owner
+        self.htmlUrl = htmlUrl
+        self.license = license
+        self.permissions = permissions
+    }
 }
 
 public struct Permission: Codable, Equatable {
+
     public let admin: Bool?
     public let pull: Bool?
     public let push: Bool?
@@ -44,6 +59,12 @@ public struct Permission: Codable, Equatable {
         case admin
         case pull
         case push
+    }
+
+    public init(admin: Bool?, pull: Bool?, push: Bool?) {
+        self.admin = admin
+        self.pull = pull
+        self.push = push
     }
 }
 
@@ -60,5 +81,13 @@ public struct License: Codable, Equatable {
         case nodeId = "node_id"
         case spdxId = "spdx_id"
         case url
+    }
+
+    public init(key: String?, name: String?, nodeId: String?, spdxId: String?, url: String?) {
+        self.key = key
+        self.name = name
+        self.nodeId = nodeId
+        self.spdxId = spdxId
+        self.url = url
     }
 }
