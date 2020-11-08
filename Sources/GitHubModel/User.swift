@@ -71,4 +71,36 @@ public struct User: Codable, Equatable {
         case collaborators
         case plan
     }
+
+    public init(id: Int, login: String, type: String, url: URL, siteAdmin: Bool, avatarUrl: URL?, followersUrl: URL, htmlUrl: URL, organizationsUrl: URL?, reposUrl: URL, name: String?, location: String?, company: String?, blog: String?, email: String?, hireable: Bool?, bio: String?, publicRepos: UInt?, publicGists: UInt?, followers: UInt?, following: UInt?, createdAt: Date?, updatedAt: Date?, totalPrivateRepos: UInt?, plan: Plan?, ownedPrivateRepos: UInt?, privateGists: UInt?, diskUsage: UInt?, collaborators: UInt?) {
+        self.id = id
+        self.login = login
+        self.type = type
+        self.url = url
+        self.siteAdmin = siteAdmin
+        self.avatarUrl = avatarUrl
+        self.followersUrl = followersUrl
+        self.htmlUrl = htmlUrl
+        self.organizationsUrl = organizationsUrl
+        self.reposUrl = reposUrl
+        self.name = name
+        self.location = location
+        self.company = company
+        self.blog = blog
+        self.email = email
+        self.hireable = hireable
+        self.bio = bio
+        self.publicRepos = publicRepos
+        self.publicGists = publicGists
+        self.followers = followers
+        self.following = following
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.totalPrivateRepos = totalPrivateRepos
+        self.plan = plan
+        self.ownedPrivateRepos = ownedPrivateRepos
+        self.privateGists = privateGists
+        self.diskUsage = diskUsage
+        self.collaborators = collaborators
+    }
 }
