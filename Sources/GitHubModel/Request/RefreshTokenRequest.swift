@@ -9,7 +9,7 @@ public struct RefreshTokenRequest: Codable {
         case refreshToken = "refresh_token"
     }
 
-    public init(user: String, refreshToken: String, accessToken: String) {
+    public init(user: String, refreshToken: String) {
         self.user = user
         self.refreshToken = refreshToken
     }
