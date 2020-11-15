@@ -9,7 +9,7 @@ import Foundation
 
 /// The event for push notification
 /// https://developer.github.com/webhooks/event-payloads/
-public enum Event: String, CaseIterable, Codable {
+public enum Event: String, CaseIterable, Codable, Equatable {
     case checkRun = "check_run"
     case checkSuite = "check_suite"
     case commitComment = "commit_comment"

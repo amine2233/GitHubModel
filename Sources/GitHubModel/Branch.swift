@@ -10,11 +10,11 @@ import Foundation
 // MARK: - Base
 
 public struct Branch: Codable, Equatable {
-    let label: String?
-    let ref: String?
-    let repo: Repository?
-    let sha: String?
-    let user: User?
+    public let label: String?
+    public let ref: String?
+    public let repo: Repository?
+    public let sha: String?
+    public let user: User?
 
     enum CodingKeys: String, CodingKey {
         case label
@@ -22,5 +22,13 @@ public struct Branch: Codable, Equatable {
         case repo
         case sha
         case user
+    }
+
+    public init(label: String?, ref: String?, repo: Repository?, sha: String?, user: User?) {
+        self.label = label
+        self.ref = ref
+        self.repo = repo
+        self.sha = sha
+        self.user = user
     }
 }
