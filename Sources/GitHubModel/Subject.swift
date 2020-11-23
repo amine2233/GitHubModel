@@ -19,4 +19,11 @@ public struct Subject: Codable {
         case type
         case url
     }
+
+    public init(latestCommentUrl: URL?, title: String, type: String, url: URL) {
+        self.latestCommentUrl = latestCommentUrl
+        self.title = title
+        self.type = type
+        self.url = url
+    }
 }

@@ -27,4 +27,15 @@ public struct Notifications: Codable {
         case updatedAt = "updated_at"
         case url
     }
+
+    public init(id: String, lastReadAt: Date?, reason: String, repository: Repository, subject: Subject, unread: Bool, updatedAt: Date, url: URL) {
+        self.id = id
+        self.lastReadAt = lastReadAt
+        self.reason = reason
+        self.repository = repository
+        self.subject = subject
+        self.unread = unread
+        self.updatedAt = updatedAt
+        self.url = url
+    }
 }
