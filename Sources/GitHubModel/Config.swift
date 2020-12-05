@@ -15,12 +15,12 @@ public struct Config: Codable, Equatable {
     /// The URL to which the payloads will be delivered.
     public let url: URL
     /// If provided, the secret will be used as the key to generate the HMAC hex digest value in the X-Hub-Signature header.
-    public let secret: String?
+    public let secret: String
 
     public init(contentType: String = "json",
                 insecureSSL: String,
                 url: URL,
-                secret: String?) {
+                secret: String) {
         self.contentType = contentType
         self.insecureSSL = insecureSSL
         self.url = url
