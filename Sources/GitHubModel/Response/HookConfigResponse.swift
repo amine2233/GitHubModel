@@ -22,7 +22,9 @@ public struct HookConfigResponse: Codable {
     public let updatedAt: Date?
     // Delete date
     public let deletedAt: Date?
-
+    // Github hook id
+    public let githubId: String
+    
     public init(id: UUID,
                 contentType: String,
                 insecureSSL: InsecureSSL,
@@ -31,6 +33,7 @@ public struct HookConfigResponse: Codable {
                 tags: [String],
                 repository: String,
                 isEnabled: Bool,
+                githubId: String,
                 createdAt: Date?,
                 updatedAt: Date? = nil,
                 deletedAt: Date? = nil) {
@@ -45,6 +48,7 @@ public struct HookConfigResponse: Codable {
         self.createdAt = createdAt
         self.updatedAt = updatedAt
         self.deletedAt = deletedAt
+        self.githubId = githubId
     }
 
     enum CodingKeys: String, CodingKey {
@@ -59,5 +63,6 @@ public struct HookConfigResponse: Codable {
         case createdAt = "create_at"
         case updatedAt = "update_at"
         case deletedAt = "delete_at"
+        case githubId = "github_id"
     }
 }

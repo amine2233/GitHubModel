@@ -13,19 +13,23 @@ public struct HookConfigRequest: Codable {
     public let repository: String
     // Is enabled hook or not
     public let isEnabled: Bool
+    // Github hook id
+    public let githubId: String
 
     public init(contentType: String = "json",
                 insecureSSL: InsecureSSL,
                 name: String,
                 tags: [String],
                 repository: String,
-                isEnabled: Bool) {
+                isEnabled: Bool,
+                githubId: String) {
         self.contentType = contentType
         self.insecureSSL = insecureSSL
         self.name = name
         self.tags = tags
         self.repository = repository
         self.isEnabled = isEnabled
+        self.githubId = githubId
     }
 
     enum CodingKeys: String, CodingKey {
@@ -35,5 +39,6 @@ public struct HookConfigRequest: Codable {
         case tags
         case repository
         case isEnabled = "is_enabled"
+        case githubId = "github_id"
     }
 }
