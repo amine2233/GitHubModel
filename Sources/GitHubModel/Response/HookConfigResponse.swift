@@ -8,15 +8,43 @@ public struct HookConfigResponse: Codable {
     public let insecureSSL: InsecureSSL
     /// If provided, the secret will be used as the key to generate the HMAC hex digest value in the X-Hub-Signature header.
     public let secret: String
+    // The name of hook
+    public let name: String
+    // All the tags concerbed by hook
+    public let tags: [String]
+    // The repository name concerned by hook
+    public let repository: String
+    // Is enabled hook or not
+    public let isEnabled: Bool
+    // Create date
+    public let createdAt: Date?
+    // Update date
+    public let updatedAt: Date?
+    // Delete date
+    public let deletedAt: Date?
 
     public init(id: UUID,
                 contentType: String,
                 insecureSSL: InsecureSSL,
-                secret: String) {
+                secret: String,
+                name: String,
+                tags: [String],
+                repository: String,
+                isEnabled: Bool,
+                createdAt: Date?,
+                updatedAt: Date? = nil,
+                deletedAt: Date? = nil) {
         self.id = id
         self.contentType = contentType
         self.insecureSSL = insecureSSL
         self.secret = secret
+        self.name = name
+        self.tags = tags
+        self.repository = repository
+        self.isEnabled = isEnabled
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
+        self.deletedAt = deletedAt
     }
 
     enum CodingKeys: String, CodingKey {
@@ -24,5 +52,12 @@ public struct HookConfigResponse: Codable {
         case contentType = "content_type"
         case insecureSSL = "insecure_ssl"
         case secret
+        case name
+        case tags
+        case repository
+        case isEnabled = "is_enabled"
+        case createdAt = "create_at"
+        case updatedAt = "update_at"
+        case deletedAt = "delete_at"
     }
 }
