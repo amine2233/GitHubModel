@@ -1,7 +1,10 @@
 import Foundation
+import Identity
 
-public struct HookConfigResponse: Codable {
-    public let id: UUID
+public struct HookConfigResponse: Codable, Identifiable {
+    public typealias RawIdentifier = UUID
+    /// The identity
+    public var id: ID
     /// The media type used to serialize the payloads. Supported values include json and form. The default is form.
     public let contentType: String
     /// Determines whether the SSL certificate of the host for url will be verified when delivering payloads. Supported values include 0 (verification is performed) and 1 (verification is not performed). The default is 0. We strongly recommend not setting this to 1 as you are subject to man-in-the-middle and other attacks.
@@ -20,10 +23,10 @@ public struct HookConfigResponse: Codable {
     public let createdAt: Date?
     // Update date
     public let updatedAt: Date?
-    // Delete date
-    public let deletedAt: Date?
-
-    public init(id: UUID,
+    // Github hook id
+    public let githubId: Identifier<Hook>
+    
+    public init(id: ID,
                 contentType: String,
                 insecureSSL: InsecureSSL,
                 secret: String,
@@ -31,9 +34,9 @@ public struct HookConfigResponse: Codable {
                 tags: [String],
                 repository: String,
                 isEnabled: Bool,
+                githubId: Identifier<Hook>,
                 createdAt: Date?,
-                updatedAt: Date? = nil,
-                deletedAt: Date? = nil) {
+                updatedAt: Date? = nil) {
         self.id = id
         self.contentType = contentType
         self.insecureSSL = insecureSSL
@@ -44,7 +47,7 @@ public struct HookConfigResponse: Codable {
         self.isEnabled = isEnabled
         self.createdAt = createdAt
         self.updatedAt = updatedAt
-        self.deletedAt = deletedAt
+        self.githubId = githubId
     }
 
     enum CodingKeys: String, CodingKey {
@@ -58,6 +61,6 @@ public struct HookConfigResponse: Codable {
         case isEnabled = "is_enabled"
         case createdAt = "create_at"
         case updatedAt = "update_at"
-        case deletedAt = "delete_at"
+        case githubId = "github_id"
     }
 }

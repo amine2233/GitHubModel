@@ -6,10 +6,13 @@
 //
 
 import Foundation
+import Identity
 
-public struct Hook: Codable, Equatable {
+public struct Hook: Codable, Equatable, Identifiable {
+    public typealias RawIdentifier = Int
+
     public let type: String
-    public let id: Int
+    public let id: ID
     public let name: String
     public let active: Bool
     public let events: [Event]
@@ -36,7 +39,7 @@ public struct Hook: Codable, Equatable {
         case lastResponse = "last_response"
     }
 
-    public init(type: String, id: Int, name: String, active: Bool, events: [Event], config: Config, updatedAt: Date, createdAt: Date, url: URL, testURL: URL, pingURL: URL, lastResponse: LastResponse) {
+    public init(type: String, id: ID, name: String, active: Bool, events: [Event], config: Config, updatedAt: Date, createdAt: Date, url: URL, testURL: URL, pingURL: URL, lastResponse: LastResponse) {
         self.type = type
         self.id = id
         self.name = name
