@@ -11,7 +11,7 @@ public struct Subject: Codable {
     public let latestCommentUrl: URL?
     public let title: String
     public let type: String
-    public let url: URL
+    public let url: URL?
 
     enum CodingKeys: String, CodingKey {
         case latestCommentUrl = "latest_comment_url"
