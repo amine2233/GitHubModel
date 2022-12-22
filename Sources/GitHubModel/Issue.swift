@@ -23,7 +23,7 @@ public struct Issue: Codable {
     public let labels: [Label]?
     public let labelsUrl: String?
     public let locked: Bool?
-    public let milestone: String?
+    public let milestone: Milestone?
     public let nodeId: String?
     public let number: Int
     public let repositoryUrl: URL
