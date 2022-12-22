@@ -2,16 +2,16 @@ import Foundation
 
 // MARK: - Milestone
 public struct Milestone: Codable, Equatable {
-    public let url: String
-    public let htmlURL: String
-    public let labelsURL: String
-    public let id: Int
-    public let nodeID: String
-    public let number: Int
-    public let state, title, milestoneDescription: String
-    public let creator: User
-    public let openIssues, closedIssues: Int
-    public let createdAt, updatedAt, closedAt, dueOn: Date
+    public let url: String?
+    public let htmlURL: String?
+    public let labelsURL: String?
+    public let id: Int?
+    public let nodeID: String?
+    public let number: Int?
+    public let state, title, description: String?
+    public let creator: User?
+    public let openIssues, closedIssues: Int?
+    public let createdAt, updatedAt, closedAt, dueOn: Date?
 
     enum CodingKeys: String, CodingKey {
         case url
@@ -20,7 +20,7 @@ public struct Milestone: Codable, Equatable {
         case id
         case nodeID = "node_id"
         case number, state, title
-        case milestoneDescription = "description"
+        case description = "description"
         case creator
         case openIssues = "open_issues"
         case closedIssues = "closed_issues"
