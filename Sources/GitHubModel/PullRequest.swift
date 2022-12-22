@@ -43,7 +43,7 @@ public struct PullRequest: Codable, Equatable {
     public let number: Int
     public let patchUrl: String?
     public let rebaseable: Bool?
-    public let requestedReviewers: [String]?
+    public let requestedReviewers: [User]?
     public let requestedTeams: [String]?
     public let reviewCommentUrl: String?
     public let reviewComments: Int?
