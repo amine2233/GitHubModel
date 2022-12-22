@@ -38,7 +38,7 @@ public struct PullRequest: Codable, Equatable {
     public let merged: Bool?
     public let mergedAt: String?
     public let mergedBy: User?
-    public let milestone: String?
+    public let milestone: Milestone?
     public let nodeId: String?
     public let number: Int
     public let patchUrl: String?
