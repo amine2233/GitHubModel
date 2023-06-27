@@ -1,0 +1,25 @@
+{
+	"type": "Repository",
+	"id": 6567857863,
+	"name": "web",
+	"active": true,
+	"events": [
+		"commit_comment"
+	],
+	"config": {
+		"content_type": "json",
+		"insecure_ssl": "1",
+		"url": "https://eu.ngrok.io/payload"
+	},
+	"updated_at": "2023-06-27T03:33:28Z",
+	"created_at": "2023-06-27T03:33:28Z",
+	"url": "https://api.github.com/repos/amine2233/random/hooks/6567857863",
+	"test_url": "https://api.github.com/repos/amine2233/random/hooks/6567857863/test",
+	"ping_url": "https://api.github.com/repos/amine2233/random/hooks/6567857863/pings",
+	"deliveries_url": "https://api.github.com/repos/amine2233/random/hooks/6567857863/deliveries",
+	"last_response": {
+		"code": null,
+		"status": "unused",
+		"message": null
+	}
+}
