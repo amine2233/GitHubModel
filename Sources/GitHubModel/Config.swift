@@ -14,23 +14,18 @@ public struct Config: Codable, Equatable {
     public let insecureSSL: String
     /// The URL to which the payloads will be delivered.
     public let url: URL
-    /// If provided, the secret will be used as the key to generate the HMAC hex digest value in the X-Hub-Signature header.
-    public let secret: String
 
     public init(contentType: String = "json",
                 insecureSSL: String,
-                url: URL,
-                secret: String) {
+                url: URL) {
         self.contentType = contentType
         self.insecureSSL = insecureSSL
         self.url = url
-        self.secret = secret
     }
 
     enum CodingKeys: String, CodingKey {
         case contentType = "content_type"
         case insecureSSL = "insecure_ssl"
         case url
-        case secret
     }
 }
