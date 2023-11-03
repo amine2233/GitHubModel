@@ -8,10 +8,10 @@
 import Foundation
 
 public struct Subject: Codable {
-    public let latestCommentUrl: URL?
+    public let latestCommentUrl: URL
     public let title: String
     public let type: String
-    public let url: URL?
+    public let url: URL
 
     enum CodingKeys: String, CodingKey {
         case latestCommentUrl = "latest_comment_url"
@@ -20,7 +20,12 @@ public struct Subject: Codable {
         case url
     }
 
-    public init(latestCommentUrl: URL?, title: String, type: String, url: URL) {
+    public init(
+        latestCommentUrl: URL,
+        title: String,
+        type: String,
+        url: URL
+    ) {
         self.latestCommentUrl = latestCommentUrl
         self.title = title
         self.type = type
